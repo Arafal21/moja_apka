@@ -24,8 +24,7 @@ class WelcomeScreen extends StatelessWidget {
       body: Column(
         children: [
           Image.asset('assets/images/people.jpg'),
-          Text('Welcome to'),
-          Text('SeekJob'),
+          Text('Welcome to SeekJob'),
           Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
           
           ElevatedButton(
