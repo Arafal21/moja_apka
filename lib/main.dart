@@ -9,7 +9,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: WelcomeScreen(),
     );
   }
@@ -21,22 +22,56 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Image.asset('assets/images/people.jpg'),
-          Text('Welcome to SeekJob'),
-          Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
-          
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
-              );
-            },
-            child: Text('Login'),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/people.jpg', height: 220),
+
+              // SizedBox = padding
+              const SizedBox(height: 24),
+
+              Text(
+                'Welcome to SeekJob',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 29,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+
+              const SizedBox(height: 12),
+
+              Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14, color: Colors.black),
+              ),
+
+              const SizedBox(height: 24),
+
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Login'),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -47,11 +82,13 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Text("Let's Sign you in."),
-        ],
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Text(
+          "Let's Sign you in.",
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+        ),
       ),
     );
   }
