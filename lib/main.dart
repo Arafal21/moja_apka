@@ -123,9 +123,9 @@ class LoginScreen extends StatelessWidget {
                 },
                 icon: Icon(Icons.arrow_back),
               ),
-
+              
               SizedBox(height: 40),
-
+              
               Text(
                 "Let's Sign you in.",
                 style: TextStyle(
@@ -152,9 +152,9 @@ class LoginScreen extends StatelessWidget {
                   fontFamily: 'Roboto',
                 ),
               ),
-
+              
               SizedBox(height: 40),
-
+              
               Text('Username or Email'),
               SizedBox(height: 8),
               TextField(
@@ -165,9 +165,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
+              
               SizedBox(height: 20),
-
+              
               Text('Password'),
               SizedBox(height: 8),
               TextField(
@@ -180,9 +180,9 @@ class LoginScreen extends StatelessWidget {
                   suffixIcon: Icon(Icons.visibility_off),
                 ),
               ),
-
+              
               SizedBox(height: 40),
-
+              
               Row(
                 children: [
                   Expanded(child: Divider()),
@@ -193,9 +193,9 @@ class LoginScreen extends StatelessWidget {
                   Expanded(child: Divider()),
                 ],
               ),
-
+              
               SizedBox(height: 30),
-
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -226,6 +226,46 @@ class LoginScreen extends StatelessWidget {
                     child: Text('Facebook'),
                   ),
                 ],
+              ),
+              
+              SizedBox(height: 80),
+              
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account ? ",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      'Register',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              
+              SizedBox(height: 20),
+              
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text('Login'),
+                ),
               ),
             ],
           ),
