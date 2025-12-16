@@ -118,25 +118,43 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               IconButton(
-                onPressed: () => Navigator.pop(context),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 icon: Icon(Icons.arrow_back),
               ),
-              SizedBox(height: 80),
+
+              SizedBox(height: 40),
+
               Text(
                 "Let's Sign you in.",
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                ),
               ),
               SizedBox(height: 16),
               Text(
                 'Welcome back',
-                style: TextStyle(fontSize: 24, color: Colors.grey),
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.grey,
+                  fontFamily: 'Roboto',
+                ),
               ),
               SizedBox(height: 8),
               Text(
                 "You've been missed!",
-                style: TextStyle(fontSize: 24, color: Colors.grey),
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.grey,
+                  fontFamily: 'Roboto',
+                ),
               ),
+
               SizedBox(height: 40),
+
               Text('Username or Email'),
               SizedBox(height: 8),
               TextField(
@@ -147,7 +165,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
+
               SizedBox(height: 20),
+
               Text('Password'),
               SizedBox(height: 8),
               TextField(
@@ -159,6 +179,53 @@ class LoginScreen extends StatelessWidget {
                   ),
                   suffixIcon: Icon(Icons.visibility_off),
                 ),
+              ),
+
+              SizedBox(height: 40),
+
+              Row(
+                children: [
+                  Expanded(child: Divider()),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Text('or', style: TextStyle(color: Colors.grey)),
+                  ),
+                  Expanded(child: Divider()),
+                ],
+              ),
+
+              SizedBox(height: 30),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text('Google'),
+                  ),
+                  SizedBox(width: 20),
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text('LinkedIn'),
+                  ),
+                  SizedBox(width: 20),
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text('Facebook'),
+                  ),
+                ],
               ),
             ],
           ),
