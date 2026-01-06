@@ -8,7 +8,22 @@ class LoginData {
   LoginData({required this.email, required this.password});
 }
 
-final loginDataProvider = StateProvider<LoginData?>((ref) => null);
+class LoginDataNotifier extends Notifier<LoginData?> {
+  @override
+  LoginData? build() => null;
+
+  void setLoginData(String email, String password) {
+    state = LoginData(email: email, password: password);
+  }
+
+  void clear() {
+    state = null;
+  }
+}
+
+final loginDataProvider = NotifierProvider<LoginDataNotifier, LoginData?>(
+  () => LoginDataNotifier(),
+);
 
 void main() {
   runApp(
@@ -52,10 +67,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     final email = _emailController.text;
     final password = _passwordController.text;
 
-    ref.read(loginDataProvider.notifier).state = LoginData(
-      email: email,
-      password: password,
-    );
+    ref.read(loginDataProvider.notifier).setLoginData(email, password);
   }
 
   @override
